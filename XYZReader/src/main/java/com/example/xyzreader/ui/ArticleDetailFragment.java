@@ -215,6 +215,7 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
             titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            activityReference.changeTitle(mCursor.getString(ArticleLoader.Query.TITLE));
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
@@ -298,6 +299,8 @@ public class ArticleDetailFragment extends Fragment implements
         void postImage(Bitmap bitmap);
 
         void updateBar();
+
+        void changeTitle(String title);
     }
 
 //    public int getUpButtonFloor() {

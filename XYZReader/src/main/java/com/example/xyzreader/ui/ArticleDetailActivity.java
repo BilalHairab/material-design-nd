@@ -17,6 +17,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -154,6 +155,13 @@ public class ArticleDetailActivity extends AppCompatActivity
     @Override
     public void updateBar() {
 
+    }
+
+    @Override
+    public void changeTitle(String title) {
+        if (toolbar != null)
+            toolbar.setTitle(title);
+        setTitle(title);
     }
 
 //    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
