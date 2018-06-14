@@ -215,11 +215,8 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
             String title = mCursor.getString(ArticleLoader.Query.TITLE);
-            Log.e("title1",mCursor.getString(ArticleLoader.Query.TITLE));
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-            Log.e("title2",mCursor.getString(ArticleLoader.Query.TITLE));
-            activityReference.changeTitle(mCursor.getString(ArticleLoader.Query.TITLE));
-            Log.e("title3",mCursor.getString(ArticleLoader.Query.TITLE));
+            titleView.setText(title);
+            activityReference.changeTitle(title);
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
